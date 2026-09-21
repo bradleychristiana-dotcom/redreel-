@@ -38,11 +38,8 @@ function openMovie(card){
   floatPlay.classList.add('show');
 }
 function setDemoSource(){
-  // The embedded source already in the page is the self-contained fallback preview.
   player.pause();
-  player.src='';
-  const source=player.querySelector('source');
-  if(source) player.appendChild(source);
+  player.removeAttribute('src');
   player.load();
 }
 function setVideoSource(file){
